@@ -1,0 +1,250 @@
+
+
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  
+  *,*:before,*:after {
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  :focus,:active{outline: none;}
+  a:focus,a:active{outline: none;}
+  
+  nav,footer,header,aside{display:block;}
+  
+  html, body {
+    height:100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-align-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  input,button,textarea{ 
+    font-family: inherit;
+  }
+  
+  input::-ms-clear{display: none;}
+  button{cursor: pointer;}
+  button::-moz-focus-inner {padding:0; border:0;}
+  a, a:visited{text-decoration: none;}
+  a:hover{ text-decoration: none;}
+  ul li{list-style: none;}
+  img{vertical-align: top;}
+  
+  h1,h2, h3, h4, h5, h6{
+    font-size:inherit;
+  }
+
+
+  html,body{
+    height: 100%;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  }
+
+body{
+    background: rgb(168, 185, 172);
+}
+
+
+
+
+.wrapper{
+
+}
+h1{
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+.header::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(35, 78, 44);
+    z-index: 2;
+}
+
+
+
+.container{
+    /* min-width: 1080px; */
+    width: 1080px;
+    margin: 0px auto;
+    padding: 0px 10px;
+}
+
+
+.header__body{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 150px;
+    align-items: center;
+}
+.header__logo{
+   
+    flex: 0 0 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+}
+.header__logo img{
+    max-width: 100%;
+    display: block;
+}
+
+
+.header__burger{
+    display: none;
+}
+.header__menu{}
+
+
+.header__list{
+    display: flex;
+    position: relative;
+    z-index:2 ;
+}
+.header__list li{
+    margin: 0px 0px 20px 0px;
+}
+.header__link{
+    color: white;
+    text-transform: uppercase;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 22px;
+}
+@media (max-width: 767px){
+    body.lock{
+        overflow: hidden;
+    }
+    .header__body{
+        height: 60px;
+    }
+    .header__logo{
+       flex: 0 0 50px;
+    }
+    .header__burger{
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        position: relative;
+        z-index: 3;
+    }
+    .header__burger span{
+        background-color: #fff;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        top: 9px;
+        transition: all 0.3s ease 0s;
+    }
+    .header__burger::before,
+    .header__burger::after{
+        content: '';
+        background-color: #fff;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        transition: all 0.3s ease 0s;
+    }
+    .header__burger::before{
+        top: 0;
+    }
+    .header__burger::after{
+        bottom: 0;
+    }
+    .header__burger.active span{
+        transform: scale(0);
+    }
+    .header__burger.active::before{
+          transform: rotate(45deg);
+          top: 9px;
+    }
+    .header__burger.active::after{
+        transform: rotate(-45deg);
+        bottom: 9px;
+    }
+    .header__menu{
+        position: fixed;
+        top: -100%;
+        left: 0; 
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        transition: all 0.3s ease 0s;
+        background-color: rgb(107, 107, 103);
+        padding: 70px 0px 0px 0px;
+    }
+    .header__menu.active{
+        top: 0;
+    }
+    .header__list{
+        display: block;
+    }
+    .header__list li{
+        margin: 25px 0;
+    }
+    .header__link{
+        font-size: 27px;
+    }
+}
+
+
+
+
+.content__img{
+    position: relative;
+    padding: 0px 0px 80% 0px;
+}
+.content__img img{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+
+.content{
+    /* height: 150px; */
+    padding-top: 170px;
+}
+.container{}
+.content__text{
+    font-size: 20px;
+    line-height: 25px;
+}
+.content__text p{
+    margin: 0px 0px 20px 0px;
+}
+@media (max-width: 767px){
+    .content{
+        padding: 80px 0px 0px 0px;
+    }
+}
